@@ -64,8 +64,8 @@ let objectArray=[member1,member2,member3,member4,member5,member6]
 
 let membersArray=document.querySelectorAll(".sidebar__members")
 
-
-
+$(".content__chat__wrapper").append(objectArray[0].picture,objectArray[0].message);
+$(membersArray[0]).css({"border-left": "5px solid #6200EA", "padding-left": "10px"})
 
 let j=0
 for(let i=0; i<membersArray.length;i++){
@@ -74,8 +74,9 @@ for(let i=0; i<membersArray.length;i++){
     $(membersArray[i]).click(function(){
         console.log("Ez a(z)"+i+".")
         console.log(objectArray)
+        
         $(".content__chat__wrapper").empty();
-        $(".content__chat__wrapper").append(objectArray[i].picture,objectArray[0].message);
+        $(".content__chat__wrapper").append(objectArray[i].picture,objectArray[i].message);
         
         j=i
         
@@ -101,7 +102,7 @@ myDiv.animate({ scrollTop: myDiv.prop("scrollHeight") - 1 }, 300);
         $(this).closest(".selected").css({"border-left": "5px solid #6200EA", "padding-left": "10px"})
 
         
-
+        
     });
 
 
@@ -141,7 +142,7 @@ myDiv.animate({ scrollTop: myDiv.prop("scrollHeight") - 1 }, 300);
     }
     
 });
-    
+
 }
 
 
