@@ -8,8 +8,8 @@
  let member1 = {
     name: 'Amy Adams',
     picture: '<img class="content__chat__image--amy" src="assets/user_avatar_01.png" alt="amy">',
-    message: '<h6 class="content__chat__metadata--amy">Amy Adams, '+timeStamp+'</h6>'
-    + '<div class="clearfix">'
+    message:
+     '<div class="clearfix">'
     + '<p class="content__chat__message--amy"> "Lorem ipsum dolor sit amet, consectetur adipiscing elit,'
     +' sed do eiusmod tempor incididunt ut labore et dolore magna aliqua erat. </p>' + ' </div>'
 }
@@ -17,8 +17,8 @@
 let member2 ={
     name: 'Marc',
     picture: '<img class="content__chat__image--amy" src="assets/user_avatar_02.png" alt="amy">',
-    message: '<h6 class="content__chat__metadata--amy">Marc, '+timeStamp+'</h6>'
-    + '<div class="clearfix">'
+    message:
+     '<div class="clearfix">'
     + '<p class="content__chat__message--amy"> "Lorem ipsum dolor sit amet, consectetur adipiscing elit,'
     +' sed do eiusmod tempor incididunt ut labore et dolore magna aliqua erat.</p>' + ' </div>' 
 }
@@ -26,8 +26,8 @@ let member2 ={
 let member3 ={
     name: 'Jacob',
     picture: '<img class="content__chat__image--amy" src="assets/user_avatar_03.png" alt="amy">',
-    message:'<h6 class="content__chat__metadata--amy">Jacob, '+timeStamp+'</h6>'
-    + '<div class="clearfix">' 
+    message:
+     '<div class="clearfix">' 
     + '<p class="content__chat__message--amy"> "Lorem ipsum dolor sit amet, consectetur adipiscing elit,'
     +' sed do eiusmod tempor incididunt ut labore et dolore magna aliqua erat.</p>' + ' </div>' 
 }
@@ -35,26 +35,26 @@ let member3 ={
 let member4 = {
     name: 'Chris Simth',
     picture: '<img class="content__chat__image--amy" src="assets/user_avatar_04.png" alt="amy">',
-    message: '<h6 class="content__chat__metadata--amy">Chris Smith, '+timeStamp+'</h6>'
-    + '<div class="clearfix">'
+    message:
+     '<div class="clearfix">'
     + '<p class="content__chat__message--amy"> "Lorem ipsum dolor sit amet, consectetur adipiscing elit,'
     +' sed do eiusmod tempor incididunt ut labore et dolore magna aliqua erat.</p>' + ' </div>' 
 }
 let member5 = {
     name: 'Mia Wong',
     picture: '<img class="content__chat__image--amy" src="assets/user_avatar_05.png" alt="amy">',
-    message: '<h6 class="content__chat__metadata--amy">Mia Wong, '+timeStamp+'</h6>'
-    + '<div class="clearfix">'
+    message: 
+     '<div class="clearfix">'
     + '<p class="content__chat__message--amy"> "Lorem ipsum dolor sit amet, consectetur adipiscing elit,'
     +' sed do eiusmod tempor incididunt ut labore et dolore magna aliqua erat.</p>' + ' </div>' 
 }
 let member6= {
     name: 'Jaine',
     picture: '<img class="content__chat__image--amy" src="assets/user_avatar_06.png" alt="amy">',
-    message: '<h6 class="content__chat__metadata--amy">'+'Jaine, '+timeStamp+'</h6>'
-    + '<div class="clearfix">'
+    message: 
+     '<div class="clearfix">'
     + '<p class="content__chat__message--amy"> "Lorem ipsum dolor sit amet, consectetur adipiscing elit,'
-    +' sed do eiusmod tempor incididunt ut labore et dolore magna aliqua erat.</p>' + ' </div>' 
+    +' sed do eiusmod tempor incididunt ut labore et dolore magna aliqua erat.</p>' + ' </div>'
 
 }
 
@@ -68,21 +68,20 @@ $(".content__chat__wrapper").append(objectArray[0].picture,objectArray[0].messag
 $(membersArray[0]).css({"border-left": "5px solid #6200EA", "padding-left": "10px"})
 
 let j=0
-for(let i=0; i<membersArray.length;i++){
+for(let i=0; i<membersArray.length;i++){  
+console.log(i)
 
-    
     $(membersArray[i]).click(function(){
-        console.log("Ez a(z)"+i+".")
-        console.log(objectArray)
+     
         
         $(".content__chat__wrapper").empty();
-        $(".content__chat__wrapper").append(objectArray[i].picture,objectArray[i].message);
-        
+        $(".content__chat__wrapper").append(objectArray[i].name,objectArray[i].picture,objectArray[i].message);
         j=i
+        
         
     });
 
-    }
+}
 
 
 
@@ -109,7 +108,7 @@ myDiv.animate({ scrollTop: myDiv.prop("scrollHeight") - 1 }, 300);
     
     
 
-  for( let k=j;k<objectArray.length;k++){
+
     
     $(".send-button").click(function () {
         let sendMessage = $("#message").val();
@@ -132,17 +131,25 @@ myDiv.animate({ scrollTop: myDiv.prop("scrollHeight") - 1 }, 300);
         setTimeout(function(){
             $(".typing-indicator").css("display","none")
             $(".content__chat__wrapper").append('<h6 class="content__chat__metadata--amy">'+objectArray[j].name+', '+timeStamp+'</h6>'
-            + '<div class="clearfix">' +objectArray[j].picture
-            + '<p class="content__chat__message--amy"> "Lorem ipsum dolor sit amet, consectetur adipiscing elit,'
-            +' sed do eiusmod tempor incididunt ut labore et dolore magna aliqua erat.</p>' + ' </div>' )
+           +objectArray[j].picture
+           +objectArray[j].message   )
             myDiv.animate({ scrollTop: myDiv.prop("scrollHeight") - 1 }, 300);
         },2000);
         
-        $("#message").val("")
+        $("#message").val("");
     }
     
 });
 
-}
+$(".button").click(function(){
 
+$(".sidebar__members_wrapper").append( '<div class="sidebar__members clearfix">'+
+'<div class="sidebar__members__images__wrapper layout__item--floated--left">'+
+    '<img class="sidebar__members__images" src="assets/user_avatar_06.png" alt="member">'+
+'</div>'+
+'<h6 class="sidebar__memebers__names">Jane</h6>'+
+'<p class="sidebar__members__text">Lorem ipsum dolor sit amet, consetetur</p>'+
+'</div>');
+
+});
 
