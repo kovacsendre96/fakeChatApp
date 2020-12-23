@@ -11,6 +11,7 @@ var timeStamp = currentTime.getHours() + ":"  //current time//
 + currentTime.getMinutes()
 
 
+//**********---CREATE THE MEMEBER'S OBJECTS WITH MAIN VALUES AND PUT THEESE INSIDE THE "objectArray"---**********//
 
 let member1 = {
     name: 'Amy Adams',
@@ -68,11 +69,12 @@ let member6= {
 
 
 
+
 let objectArray=[member1,member2,member3,member4,member5,member6]
 let j=0
 
 
-// *************FŐOLDAL NÉV ÉS AVATAR MEGADÁSA************* //
+// *************MAIN PAGE NÉV ÉS AVATAR MEGADÁSA************* //
 
 
 $(".message-editor").css("display","none")  // így nem látszódik az input alol, így nem tudunk beleírni addig amég nem választottunk nevet és avatart
@@ -135,12 +137,14 @@ $(avatarArray[l]).click(function(){   // ha a képre kattintok adok egy kis bord
         
 
    
-// *************--------------------------------************* //
 
 
+// *************MAIN FUNCTION FOR THE AUTO ANSWER************* //
 
 function main(){
     
+//***---Search bar---***//
+
     for(let k=0; k<membersArray.length; k++){
         $(".sidebar__search__icon").click(function search(){
          
@@ -188,6 +192,7 @@ let sideDiv = $(".sidebar__members__wrapper");
 
 
 
+/***---Selected effects of the sidebar elements---***/
 
     $(".sidebar__members").click(function(){
         $(".sidebar__members").addClass("selected")
@@ -205,6 +210,7 @@ let sideDiv = $(".sidebar__members__wrapper");
 
 
 
+//***---Send your message with this function and get your auto answer from the bot with animate scrolling---***/
 
     $(".send-button").click(function () {
         let sendMessage = $("#message").val();
@@ -233,11 +239,12 @@ let sideDiv = $(".sidebar__members__wrapper");
                 myDiv.animate({ scrollTop: myDiv.prop("scrollHeight") - 1 }, 300);
             },2000);
             
-            $("#message").val("");
+            $("#message").val(""); //clear the textarea after sent your message//
         }
     });
 }
 main();
+
 
 $(".button").click(function(){
     
