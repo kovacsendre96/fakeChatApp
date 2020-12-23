@@ -1,3 +1,5 @@
+
+  
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -26,11 +28,11 @@
                 
 
                 <div class="sidebar__search__wrapper">
-                    <input class="sidebar__search__input" type="text" placeholder="Search"/>
+                    <input class="sidebar__search__input" type="search" placeholder="Search example: 'Chris Smith"/>
                     <a class="sidebar__search__icon" href="#"><i class="fas fa-search"></i></a>
                 </div>
 
-            <div class="sidebar__members_wrapper">
+            <div class="sidebar__members__wrapper">
                 <div class="sidebar__members clearfix">
                     <div class="sidebar__members__images__wrapper layout__item--floated--left">
                         <img class="sidebar__members__images" src="assets/user_avatar_01.png" alt="member">
@@ -80,8 +82,9 @@
                 </div>
 
             </div>
-
-                <a class="button layout__item--centerized" href="#">Add new contact</a>
+                <div class="button__wrapper">
+                    <a class="button layout__item--centerized" href="#">Add new contact</a>
+                </div>
 
             </div><!--layout__item--width--25-percent.div-->
 
@@ -91,11 +94,12 @@
             <div class="content layout__item--width--75-percent layout__item--floated--right">
 
                 <div class="content__header">
-                    <p class="content__header__amy">Amy Adams</p>
+                     <p class="content__header__amy"></p>
                     <img class="content__header__logo" src="assets/logo_50.svg" alt="logo">
                     <div class="content__header__student__wrapper">
-                        <h6 class="student__name">Endre Kovács</h6>
-                        <img class="student__img" src="assets/profil.jpg" alt="fuzo">
+                        <h6 class="student__name">Your name</h6>
+                       <img class="student__img"  src="assets/new_user_avatar.png" alt="member">
+                      
                     </div>
                 </div>
 
@@ -103,9 +107,23 @@
 
                 <div class="content__chat__wrapper layout__item--width--90-percent layout__item--centerized">
 
-                 
                     
 
+                    <h6 class="content__home-screen-title">Please enter your name</h6>
+                    <div class="input__wrapper">
+                        <input class="chat__user__input" placeholder="Enter your name" type="text">
+                        
+                         
+                      
+                    </div>
+                    <h6 class="content__home-screen-title">Choose an avatar</h6>
+                    <div class="chat__avatar__wrapper">
+                        <img class="avatar__img" src="assets/batman_hero_avatar_comics-512.webp" alt="batman">
+                        <img class="avatar__img" src="assets/iconfinder_indian_woman_hindi_avatar_4043259.png" alt="indian_woman">
+                        <img class="avatar__img" src="assets/iconfinder_sloth_lazybones_sluggard_avatar_4043272.png" alt="lazybones">
+                    </div> 
+                    <a class="avatar__img__succes__button"><img class="avatar__img__succes__button--img" src="assets/checked.png" alt="checked"></a>
+             
 
                     <!-- <h6 class="content__chat__metadata--amy">Amy is typing...</h6> -->
 
